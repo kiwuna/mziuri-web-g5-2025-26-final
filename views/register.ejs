@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Blog | Sign Up</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/register.css">
+    <link rel="stylesheet" href="./stylesheets/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+<%- include('partials/header') %>
+
+<div class="container form-container">
+    <h1 class="title">SIGN UP</h1>
+</div>
+
+<form action="/register" method="POST">
+    <input type="email" name="email" id="email" placeholder="Email" required>
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required>
+    <button>Sign Up</button>
+</form>
+<p>Already have an account? <a href="/login">Sign In here</a></p>
+
+</body>
+</html>
