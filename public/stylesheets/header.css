@@ -31,3 +31,14 @@ header {
 .nav-link:hover:before {
     width: 100%;
 }
+
+.username a {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(26, 26, 26, 1);
+}
+
+.logout-link {
+    color: darkred;
+}
