@@ -1,0 +1,35 @@
+.blogs-wrapper {
+    margin: 60px auto 0;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 244px;
+    border-top: 1px solid rgba(0, 0, 0, 0.34);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+    text-align: center;
+}
+
+@media (max-width: 1440px) {
+    .title {
+        font-size: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .title {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 84px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 64px;
+    }
+}
