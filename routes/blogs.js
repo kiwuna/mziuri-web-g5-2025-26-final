@@ -5,9 +5,13 @@ const User = require('../models/user');
 const {requireAuth} = require('../middlewares/authMiddleware');
 const mongoose = require("mongoose");
 
-router.get('/', requireAuth, function (req, res, next) {
+router.get('/', requireAuth, async function (req, res, next) {
     const email = req.session.user.email;
-    res.render('blogs', {email});
+    const blogs = await Blog.find().sort({date: -1}).populate("author", "email")
+
+    console.log(blogs)
+
+    res.render('blogs', {email, blogs});
 });
 
 router.get('/new', requireAuth, function (req, res, next) {
