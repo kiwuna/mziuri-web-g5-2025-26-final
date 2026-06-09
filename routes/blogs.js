@@ -14,6 +14,16 @@ router.get('/', requireAuth, async function (req, res, next) {
     res.render('blogs', {email, blogs});
 });
 
+router.get('/:blogId', requireAuth, async function (req, res, next) {
+    const email = req.session.user.email;
+    const blogId = req.params.blogId
+    const blog = await Blog.findById(blogId).populate("author", "email")
+    const recentBlogPosts = await Blog.find().limit(8).populate("author", "email")
+
+    res.render("blog", {email, blog, recentBlogPosts})
+});
+
+
 router.get('/new', requireAuth, function (req, res, next) {
     const email = req.session.user.email;
     res.render('new_blog', {email, error: null});
