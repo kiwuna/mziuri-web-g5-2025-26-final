@@ -83,7 +83,22 @@
         </div>
 
         <div class="row-2">
-
+            <figure>
+                <img src="/images/thumbnails/thumbnail-4.png" alt="Thumbnail 4">
+            </figure>
+            <div class="content">
+                <div>
+                    <p class="meta"><%= blogs[3].author.email %>
+                        • <%= blogs[3].date.getDate() %> <%= blogs[3].date.toLocaleString('default', {month: 'short'}) %> <%= blogs[3].date.getFullYear() %></p>
+                </div>
+                <a class="blog-title-wrapper" href="/">
+                    <p><%= blogs[3].title %></p>
+                    <img src="/images/arrow-icon.svg" alt="arrow-icon">
+                </a>
+                <div>
+                    <p class="description"><%= blogs[3].description %></p>
+                </div>
+            </div>
         </div>
     </section>
 
