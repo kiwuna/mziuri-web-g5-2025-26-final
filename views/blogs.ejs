@@ -6,6 +6,7 @@
     <title>The Blog | Blogs</title>
     <link rel="stylesheet" href="./stylesheets/style.css">
     <link rel="stylesheet" href="./stylesheets/header.css">
+    <link rel="stylesheet" href="./stylesheets/footer.css">
     <link rel="stylesheet" href="./stylesheets/blogs.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +35,7 @@
                     <span> <%= blogs[0].date.getFullYear() %> </span>
                 </div>
                 <figure class="title-wrapper">
-                    <a href="/"><%= blogs[0].title %></a>
+                    <a href="/blogs/<%= blogs[0]._id %>"><%= blogs[0].title %></a>
                     <img src="/images/arrow-icon.svg" alt="arrow-icon">
                 </figure>
                 <div class="description-wrapper">
@@ -54,7 +55,7 @@
                             <span> <%= blogs[1].date.getFullYear() %> </span>
                         </div>
                         <figure class="title-wrapper">
-                            <a href="/"><%= blogs[1].title %></a>
+                            <a href="/blogs/<%= blogs[1]._id %>"><%= blogs[1].title %></a>
                         </figure>
                         <div class="description-wrapper">
                             <p><%= blogs[1].description %></p>
@@ -72,7 +73,7 @@
                             <span> <%= blogs[2].date.getFullYear() %> </span>
                         </div>
                         <figure class="title-wrapper">
-                            <a href="/"><%= blogs[2].title %></a>
+                            <a href="/blogs/<%= blogs[2]._id %>"><%= blogs[2].title %></a>
                         </figure>
                         <div class="description-wrapper">
                             <p><%= blogs[2].description %></p>
@@ -91,7 +92,7 @@
                     <p class="meta"><%= blogs[3].author.email %>
                         • <%= blogs[3].date.getDate() %> <%= blogs[3].date.toLocaleString('default', {month: 'short'}) %> <%= blogs[3].date.getFullYear() %></p>
                 </div>
-                <a class="blog-title-wrapper" href="/">
+                <a class="blog-title-wrapper" href="/blogs/<%= blogs[3]._id %>">
                     <p><%= blogs[3].title %></p>
                     <img src="/images/arrow-icon.svg" alt="arrow-icon">
                 </a>
@@ -102,8 +103,29 @@
         </div>
     </section>
 
+    <section class="all-blogs-posts-wrapper">
+        <h4>All blog posts</h4>
+        <div class="blogs-grid">
+            <% blogs.forEach((blog) => {%>
+                <div class="blog-card">
+                    <figure>
+                        <img src="/images/thumbnails/thumbnail-5.png" alt="Thumbnail 5">
+                    </figure>
+                    <div>
+                        <p class="meta"><%= blog.author.email %>> • <%= blog.date.getDate() %> <%= blog.date.toLocaleString('default', {month: 'short'}) %> <%= blog.date.getFullYear() %></p>
+                    </div>
+                    <a href="/blogs/<%= blog._id %>">
+                        <span><%= blog.title %></span>
+                        <img src="/images/arrow-icon.svg" alt="Arrow icon">
+                    </a>
+                    <p class="description"><%= blog.description %></p>
+                </div>
+            <% }) %>
+        </div>
+    </section>
 </div>
 
+<%- include('partials/footer'); %>
 
 </body>
 </html>

@@ -112,6 +112,7 @@ input {
 
 button {
     width: 955px;
+    box-sizing: border-box;
     background-color: #1A1A1A;
     color: #FFF;
     text-align: center;
@@ -121,7 +122,6 @@ button {
     font-weight: 700;
     line-height: 32px;
     padding: 20px 24px;
-    box-sizing: content-box;
     border: 1px solid #1A1A1A;
     cursor: pointer;
     transition: all 0.2s;
